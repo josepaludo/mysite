@@ -60,9 +60,6 @@ export default function NavBar() {
                     <button>
                         Portfolio
                     </button>
-                    <button className="ms-20">
-                        GitHub
-                    </button>
                     <button className="mx-20">
                         Sobre
                     </button>
