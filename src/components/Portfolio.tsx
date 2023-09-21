@@ -6,7 +6,13 @@ export default function Portfolio() {
             className="py-40"
             // style={{backgroundColor: "#5b4c4a", minHeight: "1080px"}}
             // style={{backgroundColor: " #F5F5DC", minHeight: "1080px"}}
-            style={{backgroundColor: "#40728c", minHeight: "1080px"}}
+
+
+            // style={{backgroundColor: "#40728c", minHeight: "1080px"}}
+            style={{backgroundColor: "rgba(202,228,237,1)", minHeight: "1080px"}}
+
+
+
             // style={{background: "linear-gradient(180deg, rgba(91,76,74,1) 0%, rgba(140,120,87,1) 100%)", minHeight: "1080px"}}
             // style={{background: " linear-gradient(180deg, rgba(140,120,87,1) 0%, rgba(91,76,74,1) 100%)", minHeight: "1080px"}}
         >

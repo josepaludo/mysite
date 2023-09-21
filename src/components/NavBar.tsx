@@ -1,43 +1,32 @@
 import { useEffect, useRef, useState } from "react"
 
-
 export default function NavBar() {
 
     const nav = useRef<HTMLDivElement|null>(null)
-    const [scroll, setScroll] = useState<number>(10)
-    const [padding, setPadding] = useState("50px")
+    const [scrollIsAtTop, setScrollIsAtTop] = useState(true)
 
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+
+        function handleScroll() {
             if (!nav.current) return
-            const scrollNum = Math.round(window.scrollY/100)*10
-            setScroll(scrollNum)
-        })
+            const scrollNum = Math.round(window.scrollY/400)
+            setScrollIsAtTop(scrollNum < 1)
+        }
+
+        window.addEventListener("scroll", handleScroll)
+
+        return () => window.removeEventListener("scroll", handleScroll)
+
     }, [])
 
     useEffect(() => {
-        let value: string
-        if (scroll > 40) return
-        switch (scroll) {
-            case 0:
-                value = "50px"
-                break
-            case 10:
-                value = "40px"
-                break
-            case 20:
-                value = "30px"
-                break
-            case 30:
-                value = "20px"
-                break
-            default:
-                value = "10px"
-                break
-        }
-        setPadding(value)
-    }, [scroll])
+        if (!nav.current) return
+        nav.current.style.padding = scrollIsAtTop ? "30px" : "10px"
+    } , [scrollIsAtTop])
 
+    function resetScroll() {
+        window.scrollTo({top: 0, behavior: "smooth"})
+    }
 
     return (
         <nav
@@ -50,12 +39,15 @@ export default function NavBar() {
                 style={{
                     maxWidth: "1920px",
                     transition: "padding 0.6s ease",
-                    padding
+                    // padding
                 }}
             >
-                <h1 className="text-2xl hover:cursor-pointer">
+                <button
+                    onClick={resetScroll}
+                    className="text-2xl"
+                >
                     Início
-                </h1>
+                </button>
                 <div className="flex ">
                     <button>
                         Portfolio
