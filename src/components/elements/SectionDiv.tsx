@@ -5,6 +5,8 @@ type SectionDivType = {
     containedClassName?: string
     containerStyle?: React.CSSProperties
     containedStyle?: React.CSSProperties
+    isContato?: true
+    isSobre?: true
 }
 
 const maxWidth = "1920px"
@@ -14,7 +16,7 @@ export default function SectionDiv({children, containerClassName, containedClass
 
     return <>
         <section
-            className={containerClassName}
+            className={"py-20 "+containerClassName}
             style={containerStyle}
         >
             <div

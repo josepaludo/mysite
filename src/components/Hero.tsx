@@ -11,7 +11,7 @@ export default function Hero() {
 
                 <div className="md:absolute md:top-0 w-full">
                     <div className="text-slate-900 w-10/12 mx-auto md:pt-20 pb-4">
-                        <h1 className="font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+                        <h1 className="font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white">
                             José Pedro Paludo
                         </h1>
                         <h1 className=" font-light text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
