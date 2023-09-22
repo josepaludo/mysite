@@ -52,7 +52,7 @@ export default function NavBar() {
                         Portfolio
                     </button>
                     <button className="mx-3 md:mx-10 lg:mx-20">
-                        Sobre
+                        Sobre Mim
                     </button>
                     <button>
                         Contato

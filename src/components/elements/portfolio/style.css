@@ -1,12 +1,5 @@
 
-.fadeImg {
-    transition: opacity 0.5s
-}
 
-.showImg {
-    opacity: 1;
-}
-
-.hideImg {
-    opacity: 0
+.tran {
+    transition: visibility 1s;
 }
