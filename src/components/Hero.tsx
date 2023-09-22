@@ -1,5 +1,5 @@
 import { maxWidth1920px } from '../style'
-import f from './f.jpg'
+import heroImg from '../assets/images/hero.jpg'
 
 
 export default function Hero() {
@@ -24,8 +24,7 @@ export default function Hero() {
 
                 <div className='w-10/12 mx-auto'>
                     <img
-                        // src={imgSrc}
-                        src={f}
+                        src={heroImg}
                         alt="Foto de Perfil de José Pedro Paludo"
                         className='w-full md:w-10/12 lg:w-2/3 mx-auto rounded-2xl lg:ml-auto lg:mr-0 shadow-2xl'
                     />
