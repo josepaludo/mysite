@@ -1,0 +1,12 @@
+
+.fadeImg {
+    transition: opacity 0.5s
+}
+
+.showImg {
+    opacity: 1;
+}
+
+.hideImg {
+    opacity: 0
+}

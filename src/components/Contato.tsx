@@ -1,4 +1,4 @@
-import { BlueBG } from "../style";
+import { LightBlueToBlueGradient } from "../style";
 import { GithubLink, MailLink, WhatsappLink } from "./elements/Links";
 import SectionDiv from "./elements/SectionDiv";
 import SectionHeaderCenter from "./elements/headers/SectionHeaderCenter";
@@ -6,13 +6,10 @@ import SectionHeaderCenter from "./elements/headers/SectionHeaderCenter";
 
 export default function Contato() {
 
-    const email = "joseppaludo@gmail.com"
-    const number = "41 99998 8836"
-    const github = "github.com/josepaludo"
-
     return <>
-        <SectionDiv containerStyle={{backgroundColor: BlueBG}}>
-            <SectionHeaderCenter title="Contato" className="text-white" />
+        <SectionDiv containerStyle={{background: LightBlueToBlueGradient}}>
+
+            <SectionHeaderCenter title="Contato"/>
 
             <div className="flex mx-auto w-fit py-10">
                 <MailLink />
@@ -20,28 +17,40 @@ export default function Contato() {
                 <WhatsappLink />
             </div>
 
-            <ul className="w-fit mx-auto text-center mt-10">
-                <li>
-                    <Link href={"mailto:"+email} message={email} />
-                </li>
-                <li>
-                    <Link href={"https://"+github} message={github} />
-                </li>
-                <li>
-                    <Link
-                        href={"https://wa.me/"+number.replaceAll(" ", "")}
-                        message={number}
-                    />
-                </li>
-            </ul>
+            <SmallLinks />
+
         </SectionDiv>
     </>
 }
 
-function Link({href, message}: {href: string, message: string}) {
+function SmallLinks() {
+
+    const email = "joseppaludo@gmail.com"
+    const number = "41 99998 8836"
+    const github = "github.com/josepaludo"
+
+    return <>
+        <ul className="w-fit mx-auto text-center mt-10">
+            <li>
+                <SmallLink href={"mailto:"+email} message={email} />
+            </li>
+            <li className="my-2">
+                <SmallLink href={"https://"+github} message={github} />
+            </li>
+            <li>
+                <SmallLink
+                    href={"https://wa.me/"+number.replaceAll(" ", "")}
+                    message={number}
+                />
+            </li>
+        </ul>
+    </>
+}
+
+function SmallLink({href, message}: {href: string, message: string}) {
 
     return (
-        <a href={href} className="underline">
+        <a href={href} className="underline hover:opacity-80">
             {message}
         </a>
     )

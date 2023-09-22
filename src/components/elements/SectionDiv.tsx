@@ -1,3 +1,4 @@
+import { maxWidth1920px } from "../../style"
 
 type SectionDivType = {
     children: React.ReactNode
@@ -9,8 +10,6 @@ type SectionDivType = {
     isSobre?: true
 }
 
-const maxWidth = "1920px"
-
 
 export default function SectionDiv({children, containerClassName, containedClassName, containedStyle, containerStyle}: SectionDivType) {
 
@@ -21,7 +20,7 @@ export default function SectionDiv({children, containerClassName, containedClass
         >
             <div
                 className={"w-10/12 mx-auto "+containedClassName}
-                style={{...containedStyle, maxWidth}}
+                style={{...containedStyle, ...maxWidth1920px}}
             >
                 {children}
             </div>

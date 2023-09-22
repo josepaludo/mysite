@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { maxWidth1920px } from "../style"
 
 export default function NavBar() {
 
@@ -21,7 +22,8 @@ export default function NavBar() {
 
     useEffect(() => {
         if (!nav.current) return
-        nav.current.style.padding = scrollIsAtTop ? "30px" : "10px"
+        nav.current.style.paddingTop = scrollIsAtTop ? "30px" : "10px"
+        nav.current.style.paddingBottom = scrollIsAtTop ? "30px" : "10px"
     } , [scrollIsAtTop])
 
     function resetScroll() {
@@ -31,28 +33,25 @@ export default function NavBar() {
     return (
         <nav
             className="text-white sticky top-0 z-10 shadow"
-            style={{backgroundColor: "#33343a"}}
+            style={{backgroundColor: "#041525"}}
         >
             <div
                 ref={nav}
                 className="mx-auto w-10/12 flex justify-between items-center py-10"
-                style={{
-                    maxWidth: "1920px",
-                    transition: "padding 0.6s ease",
-                    // padding
-                }}
+                style={{...maxWidth1920px, transition: "padding 0.6s ease"}}
             >
                 <button
                     onClick={resetScroll}
-                    className="text-2xl"
+                    className="text-lg md:text-xl lg:text-2xl"
                 >
                     Início
                 </button>
-                <div className="flex ">
+
+                <div className="flex text-xs md:text-sm lg:text-base ">
                     <button>
                         Portfolio
                     </button>
-                    <button className="mx-20">
+                    <button className="mx-3 md:mx-10 lg:mx-20">
                         Sobre
                     </button>
                     <button>

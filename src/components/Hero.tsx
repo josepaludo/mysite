@@ -1,16 +1,18 @@
+import { maxWidth1920px } from '../style'
 import f from './f.jpg'
+
 
 export default function Hero() {
 
     return <>
         <div
             style={{background: "linear-gradient(180deg, rgba(116,163,203,1) 0%, rgba(202,228,237,1) 100%)"}}
-            className="py-8 md:py-20 relative z-0"
+            className="pb-8 md:pb-20 relative z-0"
         >
-            <div className="mx-auto" style={{maxWidth: "1920px"}}>
+            <div className="mx-auto" style={maxWidth1920px}>
 
-                <div className="md:absolute md:top-0 w-full">
-                    <div className="text-slate-900 w-10/12 mx-auto md:pt-20 pb-4">
+                <div className="md:absolute md:top-0 w-full" style={maxWidth1920px}>
+                    <div className="w-10/12 mx-auto md:pt-2 lg:pt-10 pb-4">
                         <h1 className="font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white">
                             José Pedro Paludo
                         </h1>
