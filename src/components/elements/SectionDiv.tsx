@@ -8,15 +8,17 @@ type SectionDivType = {
     containedStyle?: React.CSSProperties
     isContato?: true
     isSobre?: true
+    id?: string
 }
 
 
-export default function SectionDiv({children, containerClassName, containedClassName, containedStyle, containerStyle}: SectionDivType) {
+export default function SectionDiv({children, containerClassName, containedClassName, containedStyle, containerStyle, id}: SectionDivType) {
 
     return <>
         <section
             className={"py-20 "+containerClassName}
             style={containerStyle}
+            id={id}
         >
             <div
                 className={"w-10/12 mx-auto "+containedClassName}

@@ -2,19 +2,32 @@ import { MouseEventHandler, useState } from "react";
 import { ArrowHeadSVG } from "../svg/ArrowHeads";
 import CarouselItem from "./CarouselItem";
 import ItemCard from "./ItemCard";
+import { ProjectType } from "../../../types";
 
-type CarouselButtonType = {isLeft?: true, onClick?: MouseEventHandler<HTMLButtonElement>}
-
-const mySiteDescription = "Meu site pessoal foi feito com React, Typescript e Tailwind, utilizando Vite para build."
-const items: {title: string, description: string}[] = [
-    { title: "Meu site", description: mySiteDescription },
-    { title: "Outro site1", description: "Outro siteee 1" },
-    { title: "Outro site2", description: "Outro siteee 2" },
-    { title: "Outro site3", description: "Outro siteee 3" },
-    { title: "Outro site4", description: "Outro siteee 4" },
-    { title: "Outro site5", description: "Outro siteee 5" },
+const projects: ProjectType[] = [
+    {
+        title: "Meu site pessoal",
+        description: "Meu site pessoal foi feito com React, Typescript e Tailwind, utilizando Vite para build.",
+        githubUrl: "mysite",
+        websiteUrl: "."
+    },
+    {
+        title: "Dungeon Way is Down",
+        description: "Um jogo de linha de comando feito apenas com Python onde você reúne sua party para derrotar goblins, orcs e outros monstros em dungeons onde não há como voltar: o único caminho possível é para baixo.",
+        githubUrl: "dungeonwayisdown"
+    },
+    {
+        title: "Tretris",
+        description: "Um site onde você pode jogar uma versão do famoso quebra-cabeça de blocos 'Tetris', feito utilizando apenas HTML, CSS e Javascript",
+        githubUrl: "Tretris"
+    },
+    {
+        title: "Pedra Papel Tesoura",
+        description: "O primeiro projeto web que desenvolvi, feito utilizando apenas HTML, CSS e Javascript. ",
+        githubUrl: "RockPaperScissors"
+    },
 ]
-const lastInd = items.length-1
+const lastInd = projects.length-1
 
 
 export default function PortfolioCarousel() {
@@ -23,32 +36,35 @@ export default function PortfolioCarousel() {
     const [hide, setHide] = useState(false)
 
     function pushItemToRight() {
+        if (hide) return;
         setHide(true)
         setTimeout(() => {
             setHide(false)
             setInd(oldInd => oldInd === lastInd ? 0 : oldInd+1)
-        }, 500)
+        }, 550)
     }
 
     function pushItemToLeft() {
+        if (hide) return;
         setHide(true)
         setTimeout(() => {
             setHide(false)
             setInd(oldInd => oldInd === 0 ? lastInd : oldInd-1)
-        }, 500)
+        }, 550)
     }
 
     return (
-        <ItemCard className=" mt-20">
+        <ItemCard className=" mt-20 " >
             <h1 className="text-6xl text-center font-semibold pb-10">
                 Outros Projetos
             </h1>
 
-            <div className="flex">
+            <ProjectsBar ind={ind} setInd={setInd} hide={hide} setHide={setHide} />
+
+            <div className="flex"> 
                 <CarouselButton isLeft={true} onClick={pushItemToLeft} />
                 <CarouselItem
-                    title={items[ind].title}
-                    description={items[ind].title}
+                    project={projects[ind]}
                     className={" grow transition-opacity duration-1000 " + (hide ? "opacity-0" : "opacity-1")}
                 />
                 <CarouselButton onClick={pushItemToRight} />
@@ -78,4 +94,49 @@ function CarouselButton({isLeft, onClick}: CarouselButtonType) {
             </div>
         </button>
     )
+}
+
+function ProjectsBar(
+    {ind, setInd, hide, setHide}: ProjectsBarType
+) {
+
+    function handleClick(ind: number) {
+        if (hide) return
+        setHide(true)
+        setTimeout(() => {
+            setHide(false)
+            setInd(ind)
+        }, 550)
+    }
+
+    return (
+        <div className="flex px-5 mx-auto max-w-xl">
+            { [...projects.keys()].map(key => (
+                <button
+                    key={key}
+                    onClick={() => handleClick(key)}
+                    className={
+                        "grow  border-y border-r border-slate-500 h-4 shadow " +
+                        (key === 0 ? " rounded-s-lg border-l " : " ") +
+                        (key === lastInd ? " rounded-e-lg " : "") +
+                        (key === ind ? " bg-slate-500 " : "") +
+                        (key === ind && hide ? " bg-opacity-0 " : " bg-opacity-1 ")
+                    }
+                    style={{transition: "background-color 500ms"}}
+                />
+            ))}
+        </div>
+    )
+}
+
+type CarouselButtonType = {
+    isLeft?: true,
+    onClick?: MouseEventHandler<HTMLButtonElement>
+}
+
+type ProjectsBarType = {
+    ind: number,
+    setInd: React.Dispatch<React.SetStateAction<number>>,
+    hide: boolean,
+    setHide: React.Dispatch<React.SetStateAction<boolean>>
 }

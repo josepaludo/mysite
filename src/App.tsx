@@ -9,18 +9,15 @@ import Sobre from './components/Sobre'
 
 function App() {
 
-  return <>
-    <NavBar />
-
-    <Empty />
-
-    <Hero />
-    <Portfolio />
-    <Sobre />
-    <Contato />
-
-    <Empty />
-  </>
+    return <>
+        <NavBar />
+        <Empty />
+        <Hero />
+        <Portfolio />
+        <Sobre />
+        <Contato />
+        <Empty />
+    </>
 }
 
 export default App

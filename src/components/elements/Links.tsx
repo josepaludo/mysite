@@ -3,6 +3,7 @@ import GitHubSVG from "./svg/GitHubSVG"
 import WhatsAppSVG from "./svg/WhatsAppSVG"
 
 import './style.css'
+import LinkedinSVG from "./svg/LinkedinSVG"
 
 
 export function MailLink() {
@@ -23,11 +24,20 @@ export function GithubLink({className}: {className?: string}) {
     )
 }
 
-export function WhatsappLink() {
+export function WhatsappLink({className}: {className: string}) {
 
     return (
-        <Link url="https://wa.me/41999988836" className="shadow" >
+        <Link url="https://wa.me/41999988836" className={"shadow "+className} >
             <WhatsAppSVG />
+        </Link>
+    )
+}
+
+export function LinkedinLink() {
+
+    return (
+        <Link url="https://linkedin.com/in/josepaludo" className="shadow">
+            <LinkedinSVG />
         </Link>
     )
 }

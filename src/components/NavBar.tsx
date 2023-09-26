@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { maxWidth1920px } from "../style"
+import { Section } from "../types"
+
 
 export default function NavBar() {
 
@@ -30,6 +32,13 @@ export default function NavBar() {
         window.scrollTo({top: 0, behavior: "smooth"})
     }
 
+    function scrollTo(section: Section) {
+        const sectionElement = document.getElementById(section)
+        if (!sectionElement) return
+        const height = sectionElement.offsetTop
+        window.scrollTo({top: height-20, behavior: "smooth"})
+    }
+
     return (
         <nav
             className="text-white sticky top-0 z-10 shadow"
@@ -48,13 +57,20 @@ export default function NavBar() {
                 </button>
 
                 <div className="flex text-xs md:text-sm lg:text-base ">
-                    <button>
+                    <button
+                        onClick={() => scrollTo(Section.portfolio)}
+                    >
                         Portfolio
                     </button>
-                    <button className="mx-3 md:mx-10 lg:mx-20">
+                    <button
+                        className="mx-3 md:mx-10 lg:mx-20"
+                        onClick={() => scrollTo(Section.sobre)}
+                    >
                         Sobre Mim
                     </button>
-                    <button>
+                    <button
+                        onClick={() => scrollTo(Section.contato)}
+                    >
                         Contato
                     </button>
                 </div>

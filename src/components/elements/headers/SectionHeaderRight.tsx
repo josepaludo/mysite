@@ -12,6 +12,6 @@ export default function SectionHeaderRight(
     return <>
         <SectionHeader
             title={title}
-            className={" text-end mr-20 lg:mr-40 xl:mr-72 2xl:mr-96 " + className} />
+            className={" text-end mr-20 lg:mr-40 2xl:mr-72 " + className} />
     </>
 }

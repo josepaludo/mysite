@@ -26,7 +26,7 @@ export default function Hero() {
                     <img
                         src={heroImg}
                         alt="Foto de Perfil de José Pedro Paludo"
-                        className='w-full md:w-10/12 lg:w-2/3 mx-auto rounded-2xl lg:ml-auto lg:mr-0 shadow-2xl'
+                        className='w-full md:w-10/12 lg:w-2/3 xl:w-3/5 mx-auto rounded-2xl lg:ml-auto lg:mr-0 shadow-2xl'
                     />
                 </div>
             </div>

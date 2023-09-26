@@ -12,6 +12,6 @@ export default function SectionHeaderLeft(
     return <>
         <SectionHeader
             title={title}
-            className={" ml-20 lg:ml-40 xl:ml-72 2xl:ml-96 " + className} />
+            className={" ml-20 lg:ml-40 2xl:ml-72 " + className} />
     </>
 }

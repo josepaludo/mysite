@@ -8,16 +8,16 @@ type PortfolioItemType = {
     liveSiteUrl: string
     githubRepo: string
     description: string
+    className?: string
 }
 
 
 export default function PortfolioItem(
-    {imageSources, title, liveSiteUrl, githubRepo, description}: PortfolioItemType
+    {imageSources, title, liveSiteUrl, githubRepo, description, className}: PortfolioItemType
 ) {
 
     return (
-        <ItemCard>
-
+        <ItemCard className={className}>
             <div className="mb-10 sm:flex">
                 <div className='w-2/3 mb-10 mx-auto sm:my-auto sm:w-fit'>
                     <h1 className=" mx-auto text-4xl font-semibold self-center lg:text-6xl">
