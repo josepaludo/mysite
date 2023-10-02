@@ -13,18 +13,26 @@ const projects: ProjectType[] = [
     },
     {
         title: "Dungeon Way is Down",
-        description: "Um jogo de linha de comando feito apenas com Python onde você reúne sua party para derrotar goblins, orcs e outros monstros em dungeons onde não há como voltar: o único caminho possível é para baixo.",
+        description: "Um jogo de linha de comando feito apenas com Python onde o jogador reúne sua party para derrotar goblins, orcs e outros monstros em dungeons onde não há como voltar: o único caminho possível é para baixo.",
         githubUrl: "dungeonwayisdown"
     },
     {
         title: "Tretris",
-        description: "Um site onde você pode jogar uma versão do famoso quebra-cabeça de blocos 'Tetris', feito utilizando apenas HTML, CSS e Javascript",
-        githubUrl: "Tretris"
+        description: "Um site onde o usuário pode jogar uma versão do famoso quebra-cabeça de blocos 'Tetris', feito utilizando apenas HTML, CSS e Javascript.",
+        githubUrl: "Tretris",
+        websiteUrl: "https://josepaludo.000webhostapp.com/tretris/index.html"
     },
     {
         title: "Pedra Papel Tesoura",
-        description: "O primeiro projeto web que desenvolvi, feito utilizando apenas HTML, CSS e Javascript. ",
-        githubUrl: "RockPaperScissors"
+        description: "O primeiro projeto web que desenvolvi, feito utilizando apenas HTML, CSS e Javascript.",
+        githubUrl: "RockPaperScissors",
+        websiteUrl: "https://josepaludo.000webhostapp.com/rockpaperscissors/index.html"
+    },
+    {
+        title: "Calendário",
+        description: "Um simples site com um calendário onde é possível selecionar ano e mês, feito com HTML, Javascript e estilizado com Bootstrap.",
+        githubUrl: "Calendar",
+        websiteUrl: "https://josepaludo.000webhostapp.com/calendar/index.html"
     },
 ]
 const lastInd = projects.length-1
