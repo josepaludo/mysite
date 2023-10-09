@@ -31,7 +31,6 @@ export default function Contato() {
 function SmallLinks() {
 
     const email = "joseppaludo@gmail.com"
-    const number = "41 99998 8836"
     const github = "github.com/josepaludo"
     const linkedin = "linkedin.com/in/josepaludo"
 
@@ -47,10 +46,7 @@ function SmallLinks() {
                 <SmallLink href={"https://"+linkedin} message={linkedin} />
             </li>
             <li>
-                <SmallLink
-                    href={"https://wa.me/"+number.replaceAll(" ", "")}
-                    message={number}
-                />
+                <SmallLink href="https://wa.me/41999988836" message="41 99998 8836" />
             </li>
         </ul>
     </>
