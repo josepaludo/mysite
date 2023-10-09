@@ -39,7 +39,6 @@ export default function Portfolio() {
             <SectionHeaderLeft title="Portfolio" className="mb-20" />
 
             <PortfolioItem
-                // imageSources={liveImages}
                 imageSources={socialImages}
                 title="Social"
                 liveSiteUrl="https://nextsocial-two.vercel.app/"
@@ -51,8 +50,8 @@ export default function Portfolio() {
                 className="mt-20"
                 imageSources={cloneImages}
                 title="Clone"
-                liveSiteUrl="https://gooogle.com"
-                githubRepo="djangoclone"
+                liveSiteUrl="http://18.191.253.41/"
+                githubRepo="clonedjango"
                 description={cloneDescription}
             />
 
