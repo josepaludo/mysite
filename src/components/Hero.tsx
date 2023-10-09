@@ -5,6 +5,7 @@ import heroImg from '../assets/images/hero.jpg'
 export default function Hero() {
 
     return <>
+        
         <div
             style={{background: "linear-gradient(180deg, rgba(116,163,203,1) 0%, rgba(202,228,237,1) 100%)"}}
             className="pb-8 md:pb-20 relative z-0"
